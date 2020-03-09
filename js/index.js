@@ -48,7 +48,21 @@ let navItems = document.querySelectorAll('a');
 for (let i = 0; i < navItems.length; i++) {
   let navItem = document.querySelector(`a:nth-of-type(${i+1})`);
   navItem.textContent = siteContent["nav"][`nav-item-${i+1}`];
+  navItem.style.color = "green";
 }
+
+const firstNavItem = document.createElement("a");
+// console.log(newNavItem);
+firstNavItem.href = "#";
+firstNavItem.style.color = "green";
+firstNavItem.textContent = "Go Home";
+document.querySelector('nav').prepend(firstNavItem);
+const lastNavItem = document.createElement("a");
+lastNavItem.href = "#";
+lastNavItem.style.color = "green";
+lastNavItem.textContent = "Go Away";
+document.querySelector('nav').appendChild(lastNavItem);
+
 
 document.querySelector('h1').textContent = siteContent["cta"]["h1"];
 
