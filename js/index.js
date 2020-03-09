@@ -53,3 +53,13 @@ for (let i = 0; i < navItems.length; i++) {
 document.querySelector('h1').textContent = siteContent["cta"]["h1"];
 
 document.querySelector('button').textContent = siteContent["cta"]["button"];
+
+document.querySelector("#cta-img").src = siteContent["cta"]["img-src"];
+
+document.querySelector(".top-content > .text-content:nth-of-type(1) > h4").textContent = siteContent["main-content"]["features-h4"];
+
+document.querySelector(".top-content > .text-content:nth-of-type(1) > p").textContent = siteContent["main-content"]["features-content"];
+
+document.querySelector(".top-content > .text-content:nth-of-type(2) > h4").textContent = siteContent["main-content"]["about-h4"];
+
+document.querySelector(".top-content > .text-content:nth-of-type(2) > p").textContent = siteContent["main-content"]["about-content"];
