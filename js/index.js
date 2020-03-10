@@ -14,29 +14,90 @@ const siteContent = {
     "img-src": "img/header-img.png"
   },
   "main-content": {
-    "features-h4":"Features",
+    "features-h4": "Features",
     "features-content": "Features content elementum magna eros, ac posuere elvit tempus et. Suspendisse vel tempus odio, in interdutm nisi. Suspendisse eu ornare nisl. Nullam convallis augue justo, at imperdiet metus scelerisque quis.",
-    "about-h4":"About",
+    "about-h4": "About",
     "about-content": "About content elementum magna eros, ac posuere elvit tempus et. Suspendisse vel tempus odio, in interdutm nisi. Suspendisse eu ornare nisl. Nullam convallis augue justo, at imperdiet metus scelerisque quis.",
     "middle-img-src": "img/mid-page-accent.jpg",
-    "services-h4":"Services",
+    "services-h4": "Services",
     "services-content": "Services content elementum magna eros, ac posuere elvit tempus et. Suspendisse vel tempus odio, in interdutm nisi. Suspendisse eu ornare nisl. Nullam convallis augue justo, at imperdiet metus scelerisque quis.",
-    "product-h4":"Product",
+    "product-h4": "Product",
     "product-content": "Product content elementum magna eros, ac posuere elvit tempus et. Suspendisse vel tempus odio, in interdutm nisi. Suspendisse eu ornare nisl. Nullam convallis augue justo, at imperdiet metus scelerisque quis.",
-    "vision-h4":"Vision",
+    "vision-h4": "Vision",
     "vision-content": "Vision content elementum magna eros, ac posuere elvit tempus et. Suspendisse vel tempus odio, in interdutm nisi. Suspendisse eu ornare nisl. Nullam convallis augue justo, at imperdiet metus scelerisque quis.",
   },
   "contact": {
-    "contact-h4" : "Contact",
-    "address" : "123 Way 456 Street Somewhere, USA",
-    "phone" : "1 (888) 888-8888",
-    "email" : "sales@greatidea.io",
+    "contact-h4": "Contact",
+    "address": "123 Way 456 Street Somewhere, USA",
+    "phone": "1 (888) 888-8888",
+    "email": "sales@greatidea.io",
   },
   "footer": {
-    "copyright" : "Copyright Great Idea! 2018"
+    "copyright": "Copyright Great Idea! 2018"
   },
 };
 
 // Example: Update the img src for the logo
 let logo = document.getElementById("logo-img");
-logo.setAttribute('src', siteContent["nav"]["img-src"])
+logo.setAttribute('src', siteContent["nav"]["img-src"]);
+
+
+
+let navItems = document.querySelectorAll('a');
+// console.log(navItems);
+for (let i = 0; i < navItems.length; i++) {
+  let navItem = document.querySelector(`a:nth-of-type(${i+1})`);
+  navItem.textContent = siteContent["nav"][`nav-item-${i+1}`];
+  navItem.style.color = "green";
+}
+
+const firstNavItem = document.createElement("a");
+// console.log(newNavItem);
+firstNavItem.href = "#";
+firstNavItem.style.color = "green";
+firstNavItem.textContent = "Go Home";
+document.querySelector('nav').prepend(firstNavItem);
+const lastNavItem = document.createElement("a");
+lastNavItem.href = "#";
+lastNavItem.style.color = "green";
+lastNavItem.textContent = "Go Away";
+document.querySelector('nav').appendChild(lastNavItem);
+
+
+document.querySelector('h1').textContent = siteContent["cta"]["h1"];
+
+document.querySelector('button').textContent = siteContent["cta"]["button"];
+
+document.querySelector("#cta-img").src = siteContent["cta"]["img-src"];
+
+document.querySelector(".top-content > .text-content:nth-of-type(1) > h4").textContent = siteContent["main-content"]["features-h4"];
+
+document.querySelector(".top-content > .text-content:nth-of-type(1) > p").textContent = siteContent["main-content"]["features-content"];
+
+document.querySelector(".top-content > .text-content:nth-of-type(2) > h4").textContent = siteContent["main-content"]["about-h4"];
+
+document.querySelector(".top-content > .text-content:nth-of-type(2) > p").textContent = siteContent["main-content"]["about-content"];
+
+document.querySelector("#middle-img").src = siteContent["main-content"]["middle-img-src"];
+
+document.querySelector(".bottom-content > .text-content:nth-of-type(1) > h4").textContent = siteContent["main-content"]["services-h4"];
+
+document.querySelector(".bottom-content > .text-content:nth-of-type(1) > p").textContent = siteContent["main-content"]["services-content"];
+
+document.querySelector(".bottom-content > .text-content:nth-of-type(2) > h4").textContent = siteContent["main-content"]["product-h4"];
+
+document.querySelector(".bottom-content > .text-content:nth-of-type(2) > p").textContent = siteContent["main-content"]["product-content"];
+
+document.querySelector(".bottom-content > .text-content:nth-of-type(3) > h4").textContent = siteContent["main-content"]["vision-h4"];
+
+document.querySelector(".bottom-content > .text-content:nth-of-type(3) > p").textContent = siteContent["main-content"]["vision-content"];
+
+document.querySelector(".contact > h4").textContent = siteContent["contact"]["contact-h4"];
+
+document.querySelector(".contact > p:nth-of-type(1)").textContent = siteContent["contact"]["address"];
+
+document.querySelector(".contact > p:nth-of-type(2)").textContent = siteContent["contact"]["phone"];
+
+document.querySelector(".contact > p:nth-of-type(3)").textContent = siteContent["contact"]["email"];
+
+document.querySelector("footer > p").textContent = siteContent["footer"]["copyright"];
